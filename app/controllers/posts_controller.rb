@@ -15,6 +15,18 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def new
+    @post = Post.find(params[:id])
+  end
+
+  def create
+    if @post = Post.create(post_params)
+      redirect_to post_path(@path)
+    else
+      render :new
+    end
+  end
+
   private
 
   def post_params
