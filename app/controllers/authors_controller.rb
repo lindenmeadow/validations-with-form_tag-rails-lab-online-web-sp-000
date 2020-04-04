@@ -27,6 +27,7 @@ class AuthorsController < ApplicationController
     else
       render :'/authors/edit'
     end
+  end
 
   private
 
